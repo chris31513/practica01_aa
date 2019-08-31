@@ -7,12 +7,12 @@ public class Adoc2{
     private int size;
     
     public Adoc2(int size){
-		if(this.checkPow(size)){
-	    	this.square = new int[size][size];
-	    	this.size = size;
-		}else{
-	    	System.exit(0);
-		}
+	   if(this.checkPow(size)){
+	       this.square = new int[size][size];
+	       this.size = size;
+	   }else{
+	       System.exit(0);
+	   }
     }
 
     private boolean checkPow(int c){

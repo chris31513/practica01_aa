@@ -16,15 +16,15 @@ public class Adoc2{
     }
 
     private boolean checkPow(int c){
-	if(c <= 0){
-	    return false;
-	}
+	   if(c <= 0){
+	       return false;
+	   }
 
-	while(c > 1){
-	    if(c % 2 != 0){
-		return false;
-	    }else{
-		c = c/2;
+	   while(c > 1){
+	       if(c % 2 != 0){
+		      return false;
+	       }else{
+		      c = c/2;
 	    }
 	}
 	return true;

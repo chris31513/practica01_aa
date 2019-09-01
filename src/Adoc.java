@@ -1,16 +1,22 @@
+package src;
 import java.lang.Math; 
 import java.util.Random;
 import java.util.Arrays;
 import java.lang.Object;
+import java.awt.Color;
+import java.util.LinkedList;
 
-public class Adoc2{
-    public int[][] square;
+public class Adoc{
+    private int[][] square;
     private int size;
+    public LinkedList<Color> colores;
 
-    public Adoc2(int size){
+
+    public Adoc(int size){
         if(checkPow(size)){
             this.square = new int[size][size];
             this.size = size;
+            this.colores = new LinkedList<Color>();
         }else{
             System.exit(0);
         }
@@ -133,6 +139,17 @@ public class Adoc2{
         }
     }
 
+    public void colorRand(int n){
+        Random ran = new Random();
+        int r,g,b;
+        for(int i=0;i<n;i++){
+            r = ran.nextInt(256);
+            g = ran.nextInt(256);
+            b = ran.nextInt(256);
+            colores.add(new Color(r,g,b));
+        }
+    }
+
     public int[] concatenate(int[] a, int[] b) {
         int aLen = a.length;
         int bLen = b.length;
@@ -185,7 +202,7 @@ public class Adoc2{
 
 
     public static void main(String[] args){
-        Adoc2 p = new Adoc2(Integer.parseInt(args[0]));
+        Adoc p = new Adoc(Integer.parseInt(args[0]));
         int[][] s = p.markSpecialSquare();
     }
 }
